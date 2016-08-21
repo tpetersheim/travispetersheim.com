@@ -1,0 +1,181 @@
+<!-- cora.html -->
+    <style>
+        .embed-responsive {
+            background-color: #222222;
+        }
+        .jumbotron {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        
+        .stream_container {
+            display:none;
+        }
+        .img-stream {
+            width: 100%;
+        }
+        
+        .error {
+            text-align: center;
+            display:none;
+        }
+        
+        /* Video Controls */
+        .videoControls a:hover, .videoControls a:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .videoControls {
+            position: relative;
+            top: -40px;
+            margin-top: -2px;
+            font-size: 30px;
+        }
+        .videoControls span, .videoControls div  {
+            display: inline-block;
+            color: #111;
+        }
+        .btnMute, .btnFullscreen {
+            float: right;
+            margin-left: 10px;
+            margin-right: 5px;
+            color: #000;
+        }
+        .btnPlay, .btnRotateClockwise, .btnRotateCounterclockwise {
+            margin-right: 0px;
+            margin-left: 5px;
+            color: #000;
+        }
+        .btnFullscreen .fa {
+            background-color: white;
+            padding: 1px 3px;
+        }
+        
+        .btnRotateClockwise .fa, .btnRotateCounterclockwise .fa {
+            padding: 2px 4px;
+            background-color: white;
+            border-radius: 17px;
+        }
+        
+        /*rotations*/
+        .rotate90
+        {
+            behavior:url(-ms-transform.htc);
+            /* Firefox */
+            -moz-transform:rotate(90deg);
+            /* Safari and Chrome */
+            -webkit-transform:rotate(90deg);
+            /* Opera */
+            -o-transform:rotate(90deg);
+            /* IE9 */
+            -ms-transform:rotate(90deg);
+        }
+        .rotate180
+        {
+            behavior:url(-ms-transform.htc);
+            /* Firefox */
+            -moz-transform:rotate(180deg);
+            /* Safari and Chrome */
+            -webkit-transform:rotate(180deg);
+            /* Opera */
+            -o-transform:rotate(180deg);
+            /* IE9 */
+            -ms-transform:rotate(180deg);
+        }
+        .rotate270
+        {
+            behavior:url(-ms-transform.htc);
+            /* Firefox */
+            -moz-transform:rotate(270deg);
+            /* Safari and Chrome */
+            -webkit-transform:rotate(270deg);
+            /* Opera */
+            -o-transform:rotate(270deg);
+            /* IE9 */
+            -ms-transform:rotate(270deg);
+        }
+        
+        /* Full Screen */
+        .img-stream:-webkit-full-screen {
+            width: 100vw; 
+            /*height: 56.25vw;*/ /* 100/56.25 = 1.778 */
+            height: 66.66vw; /* 100/66.66 = 1.5 */
+            background: pink;
+            max-height: 100vh;
+            /*max-width: 177.78vh;*/ /* 16/9 = 1.778 */
+            max-width: 150.00vh; /* 4.5/3 = 1.500 */
+            margin: auto;
+            position: absolute;
+            top:0;bottom:0; /* vertical center */
+            left:0;right:0; /* horizontal center */
+        }
+        .img-stream:-moz-full-screen {
+            width: 100vw; 
+            /*height: 56.25vw;*/ /* 100/56.25 = 1.778 */
+            height: 66.66vw; /* 100/66.66 = 1.5 */
+            background: pink;
+            max-height: 100vh;
+            /*max-width: 177.78vh;*/ /* 16/9 = 1.778 */
+            max-width: 150.00vh; /* 4.5/3 = 1.500 */
+            margin: auto;
+            position: absolute;
+            top:0;bottom:0; /* vertical center */
+            left:0;right:0; /* horizontal center */
+        } 
+        .img-stream:fullscreen {
+            width: 100vw; 
+            /*height: 56.25vw;*/ /* 100/56.25 = 1.778 */
+            height: 66.66vw; /* 100/66.66 = 1.5 */
+            background: pink;
+            max-height: 100vh;
+            /*max-width: 177.78vh;*/ /* 16/9 = 1.778 */
+            max-width: 150.00vh; /* 4.5/3 = 1.500 */
+            margin: auto;
+            position: absolute;
+            top:0;bottom:0; /* vertical center */
+            left:0;right:0; /* horizontal center */
+        }
+    </style>
+
+    <div class="jumbotron text-center">
+        <h1>{{ header }}</h1>
+
+        <p>{{ message }}</p>
+    </div>
+    
+    <div class="container">
+        <div class="row">    
+      
+            <div class="col-md-10 col-md-offset-1">
+                <div class="error">
+                    <h4>The video stream appears to be down or unreachable.<br>
+                        <h6>(Not compatible with Internet Explorer)</h6></h4>
+                </div>
+                <div class="stream_container">
+                    <img class="img-stream" src="http://petersheim.no-ip.biz:8080/video?user=CameraVisitorId&pwd=YourPassword&t=" alt='' mjpegstream />
+                         
+                    <div class="videoControls">
+                        <a href="" class="btnFullscreen" ng-click="fullscreen()" title="Fullscreen">
+                            <i class="fa fa-arrows-alt"></i>
+                        </a>
+                        <a href="" class="btnRotateClockwise" ng-click="rotate(1)" title="Rotate Clockwise">
+                            <i class="fa fa-repeat"></i>
+                        </a>
+                        <a href="" class="btnRotateCounterclockwise" ng-click="rotate(-1)" title="Rotate Counterclockwise">
+                            <i class="fa fa-undo"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    <script>
+        ga('set', {
+          page: '/cora',
+          title: 'Cora'
+        });
+        ga('send', 'pageview');
+    </script>
+        

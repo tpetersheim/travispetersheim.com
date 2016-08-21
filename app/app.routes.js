@@ -3,18 +3,22 @@ webApp.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl : 'app/shared/template/templateView.html',
+            templateUrl : 'app/components/home/homeView.html',
             controller  : 'homeController'
         })
         .when('/about', {
-            templateUrl : 'app/shared/template/templateView.html',
+            templateUrl : 'app/components/about/aboutView.html',
             controller  : 'aboutController'
         })
         .when('/contact', {
-            templateUrl : 'app/shared/template/templateView.html',
+            templateUrl : 'app/components/contact/contactView.html',
             controller  : 'contactController'
+        })
+        .when('/cora', {
+            templateUrl : 'app/components/cora/coraView.html',
+            controller  : 'coraController'
         });
 
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
 });
 

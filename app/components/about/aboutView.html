@@ -1,6 +1,13 @@
 <!-- about.html -->
     <div class="jumbotron text-center">
-        <h1>About Page</h1>
+        <h1>{{ header }}</h1>
 
         <p>{{ message }}</p>
     </div>
+    <script>
+        ga('set', {
+          page: '/about',
+          title: 'About'
+        });
+        ga('send', 'pageview');
+    </script>
