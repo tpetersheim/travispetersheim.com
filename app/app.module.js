@@ -1,7 +1,7 @@
 var webApp = angular.module('webApp', 
     [
         'ngRoute', 
-        'ngAnimate',
+        //'ngAnimate',
 		'LocalStorageModule'
 	]
 ).config(function (localStorageServiceProvider) {
