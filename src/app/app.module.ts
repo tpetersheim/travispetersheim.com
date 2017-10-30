@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CoraComponent } from './cora/cora.component';
 import { CoreModule } from './core/core.module';
 import { FooterComponent } from './core/footer/footer.component';
+import { HeaderService } from './core/header/header.service';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     CoraComponent
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

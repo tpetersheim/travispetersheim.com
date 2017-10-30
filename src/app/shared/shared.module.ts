@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImageStreamComponent } from './image-stream/image-stream.component';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -9,6 +10,7 @@ import { NgModule } from '@angular/core';
     ReactiveFormsModule
   ],
   declarations: [
+    ImageStreamComponent
   ],
   providers: [
   ],
@@ -17,7 +19,8 @@ import { NgModule } from '@angular/core';
   exports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageStreamComponent
   ]
 })
 export class SharedModule {

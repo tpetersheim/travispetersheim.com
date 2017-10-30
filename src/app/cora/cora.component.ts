@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../core/header/header.service';
 
 @Component({
   selector: 'tp-cora',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoraComponent implements OnInit {
 
-  constructor() { }
+  constructor(private headerService: HeaderService) {
+    this.headerService.text = 'Cora Cam';
+    this.headerService.subText = `Cora's room webcam`;
+   }
 
   ngOnInit() {
   }

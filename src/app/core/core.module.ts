@@ -1,6 +1,8 @@
 import { AppRoutingModule } from './../app-routing.module';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HeaderService } from './header/header.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './navigation/navigation.component';
 import { Ng2Webstorage } from 'ngx-webstorage';
@@ -16,14 +18,17 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
   ],
   declarations: [
     FooterComponent,
+    HeaderComponent,
     NavigationComponent
   ],
   exports: [
     FooterComponent,
+    HeaderComponent,
     NavigationComponent
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    HeaderService
   ]
 })
 export class CoreModule {

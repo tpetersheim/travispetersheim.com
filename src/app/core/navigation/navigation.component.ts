@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationComponent implements OnInit {
   readonly navLinks: { title: string, url: string}[] = [
     { title: 'Home', url: '/home' },
-    { title: 'Cora', url: '/cora' }
+    { title: 'Cora Cam', url: '/cora' }
   ];
 
   constructor() { }

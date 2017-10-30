@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+      <div class="error" [ngClass]="{ 'show-error': showError }">
+        <h4>The video stream appears to be down or unreachable.
+          <br>
+          <h6>(Not compatible with Internet Explorer)</h6>
+        </h4>
+      </div>
+      <div class="stream-container" [ngClass]="{ 'show-stream': showStream }">
+        <img #stream class="img-stream" [src]="url" (error)="onImgStreamError()" alt='Cora Cam' />
+
+        <div class="videoControls">
+          <span href="" class="btnFullscreen" (click)="fullscreen()" title="Fullscreen">
+            <!-- <i class="fa fa-arrows-alt"></i> -->
+            <i class="material-icons">fullscreen</i>
+          </span>
+          <a href="" class="btnRotateClockwise" (click)="rotate(1)" title="Rotate Clockwise">
+            <!-- <i class="fa fa-repeat"></i> -->
+            <i class="material-icons">rotate_right</i>
+          </a>
+          <a href="" class="btnRotateCounterclockwise" (click)="rotate(-1)" title="Rotate Counterclockwise">
+            <!-- <i class="fa fa-undo"></i> -->
+            <i class="material-icons">rotate_left</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
