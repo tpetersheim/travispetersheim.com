@@ -8,6 +8,7 @@
 
 .stream-container {
   display: none;
+  position: relative;
 
   &.show-stream {
     display: block;
@@ -34,24 +35,28 @@
 }
 
 .videoControls {
-	position: relative;
-	top: -40px;
-	margin-top: -2px;
-	font-size: 30px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index: 1;
 }
-.videoControls span,
-.videoControls div {
-	display: inline-block;
-	color: #111;
+.videoControls {
+  span, div {
+    display: inline-block;
+    color: #111;
+  }
+
+  i {
+    cursor: pointer;
+  }
 }
-.btnMute,
+
 .btnFullscreen {
 	float: right;
-	margin-left: 10px;
 	margin-right: 5px;
 	color: #000;
 }
-.btnPlay,
+
 .btnRotateClockwise,
 .btnRotateCounterclockwise {
 	margin-right: 0px;
@@ -60,12 +65,12 @@
 }
 .btnFullscreen i {
 	background-color: white;
-	padding: 1px 3px;
+	padding: 1px;
 }
 
 .btnRotateClockwise i,
 .btnRotateCounterclockwise i {
-	padding: 2px 4px;
+	padding: 2px;
 	background-color: white;
 	border-radius: 17px;
 }

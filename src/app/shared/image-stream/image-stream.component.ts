@@ -10,6 +10,7 @@ export class ImageStreamComponent implements OnInit {
   @Input() url: string;
   public showError = false;
   public showStream = true;
+  private videoOrientation = 0;
 
   constructor() { }
 
@@ -33,6 +34,29 @@ export class ImageStreamComponent implements OnInit {
     enable = enable === undefined ? !this.showStream : enable;
     this.showError = !enable;
     this.showStream = enable;
+  }
+
+  rotate(change) {
+    this.videoOrientation += change;
+
+    if (this.videoOrientation < 0) {
+        this.videoOrientation = 3;
+    } else if (this.videoOrientation > 3) {
+        this.videoOrientation = 0;
+    }
+  }
+
+  public get orientationClass() {
+    switch (this.videoOrientation) {
+      case 1:
+        return 'rotate90';
+      case 2:
+        return 'rotate180';
+      case 3:
+        return 'rotate270';
+      default:
+        return null;
+    }
   }
 
 }
