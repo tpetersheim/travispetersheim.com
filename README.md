@@ -1,2 +1,2 @@
 # travispetersheim.com
-<a href="www.travispetersheim.com">travispetersheim.com</a>
+<a href="http://www.travispetersheim.com">travispetersheim.com</a>
